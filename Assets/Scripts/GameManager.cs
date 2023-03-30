@@ -16,7 +16,21 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Screen.SetResolution(800, 700, false);
         this.NewGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            Screen.fullScreen = !Screen.fullScreen;
+        }
     }
 
     public void NewGame()
